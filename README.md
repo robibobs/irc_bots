@@ -1,4 +1,4 @@
 # irc_bots
 various irc chat bots
 
-irc bot program first appeared in Linux voice October 2016
+irc bot program first appeared in Linux voice November 2016
