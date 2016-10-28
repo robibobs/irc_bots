@@ -43,10 +43,10 @@ while 1:
 	text=irc.recv(2040)
 	print text
 	
-if text.find('PING') != -1:
-	irc.send('PONG ' + text.split() [1] + '\r\n')
-	
-if text.find(':!uptime') != -1:
-	output = subprocess.check_output("uptime", shell=True)
-	print output
-	irc.send('PRIVMSG '+channel +' :' + output + '\n')
+	if text.find('PING') != -1:
+		irc.send('PONG ' + text.split() [1] + '\r\n')
+		
+	if text.find(':!uptime') != -1:
+		output = subprocess.check_output("uptime", shell=True)
+		print output
+		irc.send('PRIVMSG '+ channel +' :' + output + '\n')
