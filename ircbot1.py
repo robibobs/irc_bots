@@ -43,10 +43,28 @@ while 1:
 	text=irc.recv(2040)
 	print text
 	
+	#test to see if things work
 	if text.find('PING') != -1:
 		irc.send('PONG ' + text.split() [1] + '\r\n')
-		
+	
+	# user input ping output pong from bot 	
 	if text.find(':!uptime') != -1:
 		output = subprocess.check_output("uptime", shell=True)
-		print output
+		#print output 
 		irc.send('PRIVMSG '+ channel +' :' + output + '\n')
+		
+		
+		# user input ping output pong from bot 	
+	if text.find(':!lsb') != -1:
+		output = subprocess.check_output("lsb_release -a", shell=True)
+		#print output 
+		irc.send('PRIVMSG '+ channel +' :' + output + '\n')
+		
+		
+	
+	# user input !uptime output system uptime from bot	
+	if text.find(':!ping') != -1:
+		output = "pong"
+		#print output
+		irc.send('PRIVMSG '+ channel +' :' + output + '\n')
+		
