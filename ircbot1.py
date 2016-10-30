@@ -60,6 +60,12 @@ while 1:
 		#print output 
 		irc.send('PRIVMSG '+ channel +' :' + output + '\n')
 		
+		# user input ping output pong from bot 	
+	if text.find(':!uname') != -1:
+		output = subprocess.check_output("uname -a", shell=True)
+		#print output 
+		irc.send('PRIVMSG '+ channel +' :' + output + '\n')
+		
 		
 	
 	# user input !uptime output system uptime from bot	
