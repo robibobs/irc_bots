@@ -29,9 +29,16 @@ import socket
 import sys
 import subprocess
 
-server = "chat.freenode.net"
-channel = "#megamiketest"
-nickname = "megamikebot9001"
+#freenode
+#server = "chat.freenode.net"
+#channel = "#megamiketest"
+#nickname = "megamikebot9001"
+
+#vktec
+server = "irc.vktec.co.uk"
+channel = "#bots"
+nickname = "zleapbot"
+
 
 irc = socket .socket(socket.AF_INET, socket.SOCK_STREAM)
 irc.connect((server, 6667))
@@ -52,8 +59,7 @@ while 1:
 		output = subprocess.check_output("uptime", shell=True)
 		#print output 
 		irc.send('PRIVMSG '+ channel +' :' + output + '\n')
-		
-		
+			
 		# user input ping output pong from bot 	
 	if text.find(':!lsb') != -1:
 		output = subprocess.check_output("lsb_release -a", shell=True)
