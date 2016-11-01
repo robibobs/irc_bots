@@ -56,13 +56,15 @@ while 1:
 		output = subprocess.check_output("uptime", shell=True)
 		#print output 
 		irc.send('PRIVMSG '+ channel +' :' + output + '\n')
-		
+		mc.postToChat(output)
 		
 		# user input ping output pong from bot 	
 	if text.find(':!lsb') != -1:
 		output = subprocess.check_output("lsb_release -a", shell=True)
 		#print output 
 		irc.send('PRIVMSG '+ channel +' :' + output + '\n')
+		mc.postToChat(output)
+		
 		
 		# user input ping output pong from bot 	
 	if text.find(':!uname') != -1:
