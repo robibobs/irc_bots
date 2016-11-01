@@ -72,7 +72,6 @@ while 1:
 		#print output 
 		irc.send('PRIVMSG '+ channel +' :' + output + '\n')
 		
-		
 	
 	# user input !uptime output system uptime from bot	
 	if text.find(':!ping') != -1:
